@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <title>Pagina web Test</title>
+    <link rel="stylesheet" href="estilos/estilosForm.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/almacenarDatos.js">obtenerListaNombre()</script>
+</head>
+
+<body>
+    <section class="sec">
+        <header>
+            <a href="#"><img src="assets/logoF.png" class="logo"></a>
+            <div class="toggleMenu" onclick="menuToggler();"></div>
+            <ul class="navigation">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="inicio.html">Productos</a></li>
+                <li><a href="#">¿Qué hay de nuevo?</a></li>
+                <li><a href="comentarios.html">Testimonios</a></li>
+                <li><a href="#">Contactanos</a></li>
+            </ul>
+        </header>
+        <section class="testimonios">
+            <div class="opinion-wrap">
+                <div class="opinion-html">
+                    <input id="tab-1" type="radio" name="tab" class="enter-in" checked><label for="tab-1"
+                        class="tab">Dejanos tu opinion</label>
+                    <div class="opinion-form">
+                        <div class="enter-in-htm">
+                            <div class="group">
+                                <label for="user" class="label">Nombre</label>
+                                <input id="user" type="text" class="input">
+                            </div>
+                            <div class="group">
+                                <label for="text" class="label">MENSAJE:</label>
+                                <textarea id="txt" name="message" maxlength="201"
+                                    onkeyup="countChars(this);"></textarea>
+                                <p id="charNum" style="padding-top: 0px;">200 Caracteres Restantes</p>
+                            </div>
+                            <div class="group">
+                                <a href= "#" id="BtnComentar" type="submit" class="button"
+                                    style="text-align: center;" onclick="addComment(user, txt)">Dejar Comentario</a>
+                            </div>
+                            <div class="hr"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <section class="testimonios">
+            <div class="testimonios__header">
+                <h1>Los usuarios dicen</h1>
+            </div>
+            <div class="testimonios__contenedor" id="comentarios">
+                <div class="testimonios__caja">
+                    <div class="caja-top">
+                        <textarea readonly class="form-control" id="comments_tf" name="comments_tf" rows="10"></textarea>
+                </div>
+            </div>
+            </section>
+            <script>
+                function countChars(obj) {
+                    var maxLength = 200;
+                    var strLength = obj.value.length;
+                    var charRemain = (maxLength - strLength);
+
+                    if (charRemain < 0) {
+                        document.getElementById("charNum").innerHTML = '<span style="color: red;">Haz superado el limite de ' + maxLength + ' caracteres</span>';
+                    } else {
+                        document.getElementById("charNum").innerHTML = charRemain + ' characters remaining';
+                    }
+                }
+            </script>
+
+</body>
+
+</html>

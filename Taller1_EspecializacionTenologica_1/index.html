@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina web Test</title>
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <section class="sec">
+        <header>
+            <a href="#"><img src="assets/logoF.png" class="logo"></a>
+            <div class="toggleMenu" onclick="menuToggler();"></div>
+            <ul class="navigation">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Productos</a></li>
+                <li><a href="#">¿Qué hay de nuevo?</a></li>
+                <li><a href="comentarios.html">Testimonios</a></li>
+                <li><a href="#">Contactanos</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Comentarios: <br><span></span></h2>
+                <div style="background-color: white;">
+                    <h1>@Jogan</h1>
+                    <h1>Este es un comentario de ejemplo.</h1>
+                </div>
+                <a href="comentarios.html">Realizar comentario</a>
+            </div>
+            <div class="imgBox">
+                <img src="assets/saber.png" class="servant">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="assets/logoSaber.png" onclick="imgSlider('assets/saber.png');changeColor('#0026be');"></li>
+            <li><img src="assets/logoRider.png" onclick="imgSlider('assets/rider.png');changeColor('#e60c2c');"></li>
+            <li><img src="assets/logoArcher.png" onclick="imgSlider('assets/gilgamech.png');changeColor('#dabc13');">
+            </li>
+        </ul>
+        <ul class="sci">
+            <li><a href="https://www.facebook.com"><img src="assets/facebook.png"></a></li>
+            <li><a href="https://www.instagram.com"><img src="assets/instagram.png"></a></li>
+            <li><a href="https://www.twitter.com"><img src="assets/twitter.png"></a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function imgSlider(anything) {
+            document.querySelector('.servant').src = anything;
+        }
+        function changeColor(color) {
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
+        }
+        function changeText(texto) {
+            document.querySelector('.descript').src = texto;
+        }
+        function menuToggler() {
+            const toggleMenu = document.querySelector('.toggleMenu');
+            const navigation = document.querySelector('.navigation');
+            toggleMenu.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

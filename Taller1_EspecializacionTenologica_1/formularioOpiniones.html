@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="estilos/estilosForm.css">
+</head>
+<div class="opinion-wrap">
+    <div class="opinion-html">
+        <input id="tab-1" type="radio" name="tab" class="enter-in" checked><label for="tab-1" class="tab">Dejanos tu
+            opinion</label>
+        <div class="opinion-form">
+            <div class="enter-in-htm">
+                <div class="group">
+                    <label for="user" class="label">Nombre</label>
+                    <input id="user" type="text" class="input">
+                </div>
+                <div class="group">
+                    <label for="text" class="label" >MENSAJE:</label>
+                    <textarea id="txt" name="message" maxlength="201" onkeyup="countChars(this);"></textarea>
+                    <p id="charNum" style="padding-top: 0px;" >200 Caracteres Restantes</p>
+                </div>
+                <div class="group">
+                    <a href="formularioOpiniones.html" id="BtnComentar" type="submit" class="button" style="text-align: center;">Dejar Comentario</a>
+                </div>
+                <div class="hr"></div>
+                    <a href="index.html" type="submit" class="button" style="color: rgb(255, 255, 255);">CANCELAR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/mostrarOpiniones.js"></script>
+<script>
+    function countChars(obj){
+    var maxLength = 200;
+    var strLength = obj.value.length;
+    var charRemain = (maxLength - strLength);
+    
+    if(charRemain < 0){
+        document.getElementById("charNum").innerHTML = '<span style="color: red;">Haz superado el limite de '+maxLength+' caracteres</span>';
+    }else{
+        document.getElementById("charNum").innerHTML = charRemain+' characters remaining';
+    }
+}
+</script>
+
+</html>
